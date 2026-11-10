@@ -27,7 +27,7 @@ function exemple1()
 	// Modifier le code pour appliquer le changement pour toutes les cartes
 	// Il faut utiliser une boucle avec un index 
 	for(let i = 0; i < lesCartes.length; i++){
-		lesCartes[0].className = "coeur13";
+		lesCartes[i].className = "coeur13";
 	}
 }
 
@@ -39,7 +39,7 @@ function exemple2()
 	let lesCartes = document.getElementsByTagName("li");
 
 	for(let i = 0; i < lesCartes.length; i++){
-		
+		lesCartes[i].className = "pique"+(i+1);
 	}
 }
 
@@ -47,47 +47,118 @@ function exemple2()
 function exemple3()
 {	
 	retirerLesClasses();
+
+	let lesCartes = document.getElementsByTagName("li");
+
+	for(let i = 0; i < lesCartes.length; i++){
+		lesCartes[i].className = "coeur"+(13-i);
+	}
 }
 
 //=================================================================
 function exemple4()
 { 	
 	retirerLesClasses();
+
+	let lesCartes = document.getElementsByTagName("li");
+
+	for(let i = 0; i < lesCartes.length; i++){
+		lesCartes[i].className = "carreau"+(6-i);
+	}
 }
 
 //=================================================================
 function exemple5()
 {   
 	retirerLesClasses();
+
+	let lesCartes = document.getElementsByTagName("li");
+
+	for(let i = 0; i < lesCartes.length; i++){
+		lesCartes[i].className = "trefle"+(2*i+1);
+	}
 }
 //=================================================================
 function exemple6()
 {   
 	retirerLesClasses();
+
+	let lesCartes = document.getElementsByTagName("li");
+
+	for(let i = 0; i < lesCartes.length; i++){
+		lesCartes[i].className = "carreau"+((i%3)+1);
+	}
 }
 
 //=================================================================
 function exemple7()
 {   
 	retirerLesClasses();
+
+	let lesCartes = document.getElementsByTagName("li");
+
+	for(let i = 0; i < lesCartes.length; i++){
+		if (i%2 == 0)
+		{
+			lesCartes[i].className = "pique"+(i+1);
+		}
+		else {
+			lesCartes[i].className = "coeur"+(i+1);
+		}
+	}
 }
 
 //=================================================================
 function exemple8()
 {   
 	retirerLesClasses();
+
+	let lesCartes = document.getElementsByTagName("li");
+
+	for(let i = 0; i < lesCartes.length; i++){
+		let num = randNumber(14)
+		if (num == 0)
+		{
+			lesCartes[i].className = "carreau1";
+		}
+		else {
+			lesCartes[i].className = "carreau"+(num);
+		}
+		
+	}
 }
 
 //=================================================================
 function exemple9()
 {   
 	retirerLesClasses();
+
+	let lesCartes = document.getElementsByTagName("li");
+
+	let num = randNumber(9);
+	if (num == 0) {
+		num = 1;
+	} 
+
+	for(let i = 0; i < lesCartes.length; i++){
+		lesCartes[i].className = "pique"+(num+i);
+	}
 }
 
 //=================================================================
 function exemple10()
 {   
 	retirerLesClasses();
+
+	let lesCartes = document.getElementsByTagName("li");
+
+	for(let i = 0; i < lesCartes.length; i++){
+		let numIndex = randNumber(14);
+		if (numIndex == 0) numIndex = 1;
+		let numCarte = randNumber(4);
+
+		lesCartes[i].className = tabSortes[numCarte]+numIndex;
+	}
 }
 
 
